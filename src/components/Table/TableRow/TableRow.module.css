@@ -1,0 +1,14 @@
+td {
+    padding: 10px 5px;
+}
+
+.editButton {
+    background: #c8102e;
+    color: #ffffff;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.editButton:hover {
+    background: #95081f;
+}
