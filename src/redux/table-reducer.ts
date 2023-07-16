@@ -1,12 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
+import type {PayloadAction} from '@reduxjs/toolkit'
 
 interface TableState {
     isChoiceType: boolean,
     newRowType: string,
+    isEditMode: boolean
     filter: string,
     data: Array<TableData>,
-    newRow: TableData
+    newRow: TableData,
+    editRow: TableData,
 }
 
 export interface TableData {
@@ -27,6 +29,7 @@ const initialState: TableState = {
     isChoiceType: false,
     newRowType: '',
     filter: "all",
+    isEditMode: false,
     data: [
         {
             id: 1,
@@ -203,6 +206,19 @@ const initialState: TableState = {
         envelope: '',
         whoPassed: '',
         datePassed: ''
+    },
+    editRow: {
+        id: null,
+        type: '',
+        organization: '',
+        content: '',
+        date: '',
+        transferred: '',
+        address: '',
+        deliveryType: '',
+        envelope: '',
+        whoPassed: '',
+        datePassed: ''
     }
 };
 
@@ -216,14 +232,85 @@ export const tableSlice = createSlice({
         changeNewRowType: (state, action: PayloadAction<string>) => {
             state.newRowType = action.payload;
         },
+        changeFilter: (state, action: PayloadAction<string>) => {
+            state.filter = action.payload;
+        },
         addNewRow: (state, action: PayloadAction<TableData>) => {
             state.data.push(action.payload);
         },
-        changeFilter: (state, action: PayloadAction<string>) => {
-            state.filter = action.payload;
+        setNewRowType: (state, action: PayloadAction<string>) => {
+            state.newRow.type = action.payload;
+        },
+        setNewRowId: (state, action: PayloadAction<number>) => {
+            state.newRow.id = action.payload;
+        },
+        updateNewRowOrganization: (state, action: PayloadAction<string>) => {
+            state.newRow.organization = action.payload;
+        },
+        updateNewRowContent: (state, action: PayloadAction<string>) => {
+            state.newRow.content = action.payload;
+        },
+        updateNewRowDate: (state, action: PayloadAction<string>) => {
+            state.newRow.date = action.payload;
+        },
+        updateNewRowTransferred: (state, action: PayloadAction<string>) => {
+            state.newRow.transferred = action.payload;
+        },
+        updateNewRowAddress: (state, action: PayloadAction<string>) => {
+            state.newRow.address = action.payload;
+        },
+        updateNewRowDeliveryType: (state, action: PayloadAction<string>) => {
+            state.newRow.deliveryType = action.payload;
+        },
+        updateNewRowEnvelope: (state, action: PayloadAction<string>) => {
+            state.newRow.envelope = action.payload;
+        },
+        updateNewRowWhoPassed: (state, action: PayloadAction<string>) => {
+            state.newRow.whoPassed = action.payload;
+        },
+        updateNewRowDatePassed: (state, action: PayloadAction<string>) => {
+            state.newRow.datePassed = action.payload;
+        },
+        clearNewRowState: (state, action: PayloadAction<void>) => {
+            state.newRow.id = null;
+            state.newRow.type = '';
+            state.newRow.organization = '';
+            state.newRow.content = '';
+            state.newRow.date = '';
+            state.newRow.transferred = '';
+            state.newRow.address = '';
+            state.newRow.deliveryType = '';
+            state.newRow.envelope = '';
+            state.newRow.whoPassed = '';
+            state.newRow.datePassed = '';
+        },
+        changeIsEditMode: (state, action: PayloadAction<boolean>) => {
+            state.isEditMode = action.payload;
+        },
+        selectRowForEdit: (state, action: PayloadAction<object>) => {
+            Object.assign(state.editRow, action.payload);
         }
     },
 })
 
-export const { changeIsChoiceType, changeNewRowType, addNewRow, changeFilter } = tableSlice.actions;
+export const {
+    changeIsChoiceType,
+    changeNewRowType,
+    addNewRow,
+    changeFilter,
+    updateNewRowDeliveryType,
+    updateNewRowAddress,
+    updateNewRowContent,
+    updateNewRowOrganization,
+    updateNewRowDate,
+    updateNewRowEnvelope,
+    updateNewRowTransferred,
+    updateNewRowDatePassed,
+    updateNewRowWhoPassed,
+    clearNewRowState,
+    setNewRowId,
+    setNewRowType,
+    changeIsEditMode,
+    selectRowForEdit
+} = tableSlice.actions;
 export default tableSlice.reducer;

@@ -1,6 +1,6 @@
 import styles from "./AddNewRowBlock.module.css";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks";
-import {changeIsChoiceType, changeNewRowType} from "../../redux/table-reducer";
+import {changeIsChoiceType, changeNewRowType, clearNewRowState} from "../../redux/table-reducer";
 import React from "react";
 import NewIncoming from "./NewIncoming/NewIncoming";
 import NewOutgoing from "./NewOutgoing/NewOutgoing";
@@ -15,6 +15,7 @@ const AddNewRowBlock = (props: object) => {
     }
 
     const onNewRowType = (e: React.MouseEvent<HTMLButtonElement>) => {
+        dispatch(clearNewRowState());
         dispatch(changeNewRowType(e.currentTarget.value));
     }
 
