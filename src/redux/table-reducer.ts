@@ -289,6 +289,53 @@ export const tableSlice = createSlice({
         },
         selectRowForEdit: (state, action: PayloadAction<object>) => {
             Object.assign(state.editRow, action.payload);
+        },
+        updateEditRowOrganization: (state, action: PayloadAction<string>) => {
+            state.editRow.organization = action.payload;
+        },
+        updateEditRowContent: (state, action: PayloadAction<string>) => {
+            state.editRow.content = action.payload;
+        },
+        updateEditRowDate: (state, action: PayloadAction<string>) => {
+            state.editRow.date = action.payload;
+        },
+        updateEditRowTransferred: (state, action: PayloadAction<string>) => {
+            state.editRow.transferred = action.payload;
+        },
+        updateEditRowAddress: (state, action: PayloadAction<string>) => {
+            state.editRow.address = action.payload;
+        },
+        updateEditRowDeliveryType: (state, action: PayloadAction<string>) => {
+            state.editRow.deliveryType = action.payload;
+        },
+        updateEditRowEnvelope: (state, action: PayloadAction<string>) => {
+            state.editRow.envelope = action.payload;
+        },
+        updateEditRowWhoPassed: (state, action: PayloadAction<string>) => {
+            state.editRow.whoPassed = action.payload;
+        },
+        updateEditRowDatePassed: (state, action: PayloadAction<string>) => {
+            state.editRow.datePassed = action.payload;
+        },
+        setUpdateEditRow: (state, action: PayloadAction<TableData>) => {
+          state.data.map((el: TableData) => {
+              if (el.id === action.payload.id) {
+                  Object.assign(el, action.payload);
+              }
+          })
+        },
+        clearEditRowState: (state, action: PayloadAction<void>) => {
+            state.editRow.id = null;
+            state.editRow.type = '';
+            state.editRow.organization = '';
+            state.editRow.content = '';
+            state.editRow.date = '';
+            state.editRow.transferred = '';
+            state.editRow.address = '';
+            state.editRow.deliveryType = '';
+            state.editRow.envelope = '';
+            state.editRow.whoPassed = '';
+            state.editRow.datePassed = '';
         }
     },
 })
@@ -311,6 +358,17 @@ export const {
     setNewRowId,
     setNewRowType,
     changeIsEditMode,
-    selectRowForEdit
+    selectRowForEdit,
+    updateEditRowDate,
+    updateEditRowDatePassed,
+    updateEditRowDeliveryType,
+    updateEditRowContent,
+    updateEditRowOrganization,
+    updateEditRowTransferred,
+    updateEditRowWhoPassed,
+    updateEditRowEnvelope,
+    updateEditRowAddress,
+    clearEditRowState,
+    setUpdateEditRow
 } = tableSlice.actions;
 export default tableSlice.reducer;

@@ -1,6 +1,7 @@
 .App {
   margin: 10px auto;
   max-width: 1500px;
+  position: relative;
 }
 
 .AppOverlay {
