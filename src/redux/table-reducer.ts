@@ -45,7 +45,7 @@ const initialState: TableState = {
             type: "incoming",
             organization: 'ЗАО ГК "НАВИГАТОР"',
             content: 'Счет №227 от 09.12.2022, акт сдачи-приемки работ по этапу №2 от 09.12.2022 к договору №1-06/22-ЛС от 11.01.2022 - 2 экз',
-            date: '20.01.2023',
+            date: '24.01.2023',
             transferred: 'Жукова',
             whoPassed: "курьер"
         },

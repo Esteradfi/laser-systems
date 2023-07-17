@@ -82,3 +82,9 @@
         width: 100%;
     }
 }
+
+@media screen and (max-width: 340px) {
+    .emptyBlock {
+        display: none;
+    }
+}
