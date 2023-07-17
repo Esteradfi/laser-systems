@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/laser-systems/static/css/main.e451d910.css",
-    "main.js": "/laser-systems/static/js/main.3b9e910d.js",
+    "main.css": "/laser-systems/static/css/main.22dff901.css",
+    "main.js": "/laser-systems/static/js/main.69c1ecd8.js",
     "static/media/noto-sans-devanagari-400-normal.woff": "/laser-systems/static/media/noto-sans-devanagari-400-normal.9ecc9ba0fbe6be5443a7.woff",
     "static/media/noto-sans-latin-ext-400-normal.woff": "/laser-systems/static/media/noto-sans-latin-ext-400-normal.5a973fb017d5f413e1e4.woff",
     "static/media/noto-sans-devanagari-400-normal.woff2": "/laser-systems/static/media/noto-sans-devanagari-400-normal.c2fe07b55bd99eba603a.woff2",
@@ -19,11 +19,11 @@
     "static/media/noto-sans-vietnamese-400-normal.woff2": "/laser-systems/static/media/noto-sans-vietnamese-400-normal.999fbba78534aa9c54f3.woff2",
     "static/media/noto-sans-greek-ext-400-normal.woff2": "/laser-systems/static/media/noto-sans-greek-ext-400-normal.a53d3a503b7febd2de61.woff2",
     "index.html": "/laser-systems/index.html",
-    "main.e451d910.css.map": "/laser-systems/static/css/main.e451d910.css.map",
-    "main.3b9e910d.js.map": "/laser-systems/static/js/main.3b9e910d.js.map"
+    "main.22dff901.css.map": "/laser-systems/static/css/main.22dff901.css.map",
+    "main.69c1ecd8.js.map": "/laser-systems/static/js/main.69c1ecd8.js.map"
   },
   "entrypoints": [
-    "static/css/main.e451d910.css",
-    "static/js/main.3b9e910d.js"
+    "static/css/main.22dff901.css",
+    "static/js/main.69c1ecd8.js"
   ]
 }
